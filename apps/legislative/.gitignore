@@ -1,0 +1,11 @@
+uploads/*
+!uploads/.gitkeep
+!uploads/*_sample.pdf
+html/uploads/*
+!html/uploads/.gitkeep
+!html/uploads/*_sample.pdf
+.env
+html/vendor/
+.idea/
+.vscode/
+*.log

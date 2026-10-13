@@ -1,0 +1,35 @@
+# Environments
+**/.env
+.env
+.env.local
+.env.*.local
+
+# Uploads & Attachments
+**/uploads/*
+!**/uploads/.gitkeep
+!**/uploads/*_sample.pdf
+
+# Dependencies & Caches
+**/node_modules/
+**/vendor/
+**/venv/
+**/.pytest_cache/
+
+# Build artifacts
+**/.output/
+**/.dist/
+**/.nuxt/
+**/dist/
+
+# Logs & Databases
+*.log
+*.sqlite
+docker-data/
+mysql-data/
+*.sql
+!**/database.sql
+!**/migration.sql
+
+# OS Junk
+.DS_Store
+Thumbs.db

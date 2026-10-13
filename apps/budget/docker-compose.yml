@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  apache_container_baru:
+    build: .
+    container_name: apache_container_baru
+    ports:
+      - "8085:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./uploads:/var/www/html/uploads
+      - ./.env:/var/www/.env
+    depends_on:
+      - mysql_container_baru
+
+  mysql_container_baru:
+    image: mysql:latest
+    container_name: mysql_container_baru
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3308:3306"
+
+  phpmyadmin_container_baru:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_container_baru
+    ports:
+      - "8086:80"
+    environment:
+      PMA_HOST: mysql_container_baru
+      PMA_PORT: 3306
+    depends_on:
+      - mysql_container_baru
+
+volumes:
+  mysql-data:

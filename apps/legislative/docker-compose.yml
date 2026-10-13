@@ -1,0 +1,39 @@
+services:
+  apache_container_baleg:
+    build: .
+    container_name: apache_container_baleg
+    ports:
+      - "8081:80"
+    volumes:
+      - ./html:/var/www/html:z
+      - ./uploads:/var/www/html/uploads:z
+      - ./.env:/var/www/.env:z
+    depends_on:
+      - mysql_container_baleg
+
+  mysql_container_baleg:
+    image: mysql:latest
+    container_name: mysql_container_baleg
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3310:3306"
+
+  phpmyadmin_container_baleg:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_container_baleg
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql_container_baleg
+      PMA_PORT: 3306
+    depends_on:
+      - mysql_container_baleg
+
+volumes:
+  mysql-data:

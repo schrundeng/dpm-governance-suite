@@ -1,0 +1,134 @@
+{
+  "theme_archetype": {
+    "theme": "DARK",
+    "archetype": "5 (Jewel & Luxury) / Institutional Premium",
+    "description": "A modern, cinematic, and authoritative legislative website. Dark navy to void black base with copper/gold accents. High-end glassmorphism, subtle noise texture, and layered ambient lighting."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Cormorant Garamond",
+      "weights": ["600", "700"],
+      "usage": "H1, H2, H3, large CTA text. Gives an authoritative, institutional, and elegant feel."
+    },
+    "body": {
+      "font_family": "Outfit",
+      "weights": ["300", "400", "500"],
+      "usage": "Body text, navigation, labels, forms. Clean, modern, and highly legible contrast to the serif."
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl tracking-tighter leading-none",
+      "h2": "text-4xl sm:text-5xl tracking-tight",
+      "h3": "text-2xl sm:text-3xl",
+      "body": "text-base sm:text-lg leading-relaxed text-slate-300",
+      "overline": "text-xs sm:text-sm uppercase tracking-[0.2em] font-medium text-amber-500/80"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#02040A",
+      "gradient_start": "#050B14",
+      "gradient_end": "#02040A"
+    },
+    "accent": {
+      "gold_primary": "#C68C48",
+      "gold_light": "#E5B869",
+      "gold_glow": "rgba(198, 140, 72, 0.3)"
+    },
+    "surface": {
+      "glass": "bg-white/[0.02] backdrop-blur-xl border border-white/[0.05]",
+      "glass_hover": "bg-white/[0.04] backdrop-blur-xl border border-white/[0.1]",
+      "card": "bg-[#0A101D]"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#94A3B8",
+      "accent": "#E5B869"
+    }
+  },
+  "motion_and_effects": {
+    "background_canvas": {
+      "description": "Alive and layered background",
+      "layers": [
+        "Base layer: Very dark navy to black gradient.",
+        "Noise layer: SVG or CSS background noise mixed with blend-mode-overlay at 20% opacity.",
+        "Blob layer: 2-3 massive absolutely positioned divs with blur-[120px] and rounded-full. Colors: dark navy blue and subtle dull gold. Moving slowly via Framer Motion.",
+        "Light beams: Conic gradients or radial gradients positioned at the top corners or behind main subjects."
+      ]
+    },
+    "interactions": {
+      "hover": "Subtle scale up (scale-105), border color shift to gold/copper, shadow glow.",
+      "scroll": "Fade in and slight upward translation (y: 20 -> 0) using Framer Motion whileInView."
+    },
+    "gedung_rektorat_blend": "DO NOT just paste the image. Place it in a container. Apply a radial-gradient mask (mask-image) so the bottom fades into the dark background. Add a soft gold/copper radial glow div perfectly centered BEHIND the building to make it pop. Use CSS filter drop-shadow for a subtle rim light. Animate it floating very subtly (y-axis +/- 10px over 6 seconds)."
+  },
+  "layout_and_spacing": {
+    "grid": "Use 12-column bento grids for features. High padding (p-8 to p-12) inside containers.",
+    "section_spacing": "py-24 or py-32 for breathing room between sections."
+  },
+  "components": {
+    "header": {
+      "layout": "Fixed, z-50, crystal glassmorphism (bg-[#02040A]/60 backdrop-blur-md border-b border-white/10).",
+      "left": "Logo + 'DPM UB' bold + small subtitle 'Parlemen Pilar Karsa'.",
+      "center": "Rounded pill nav. bg-white/5 border border-white/10 rounded-full px-6 py-2.",
+      "right": "CTA 'Suarakan Aspirasimu' -> distinct styling, maybe a subtle gold border and glow."
+    },
+    "hero": {
+      "layout": "Two columns or overlapping dynamic layout. Left: Typography (H1: DPM UB 2026, tagline: Parlemen Pilar Karsa). Right: Integrated Gedung Rektorat.",
+      "typography": "H1 with gold accent on 'Karsa' or 'Pilar'."
+    },
+    "pilar_cards": {
+      "style": "Glassmorphism cards, group hover effects. Lucide icons colored gold. 1px border that glows on hover. The 5 pillars are: Legislasi, Pengawasan, Anggaran, Advokasi, Hubungan Masyarakat."
+    },
+    "feature_preview": {
+      "pengawasan": "Mini dashboard UI preview. Fake progress bars, stats, grid layout, glowing numbers.",
+      "aspirasi": "Mini form UI preview. Floating input fields, blurred background, 'submit' button pulsing."
+    },
+    "404_placeholder": {
+      "design": "Massive '404' typography, glowing. Subtitle 'Halaman belum tersedia' and description about under development. Abstract pillar shapes floating around. CTA to go back ('Kembali ke Beranda') and CTA 'Suarakan Aspirasi'. Very cinematic with fade+scale animation."
+    },
+    "aspirasi_form_modal": {
+      "design": "Premium glassmorphic modal overlaying the page. High blur. Fields: Nama, NIM, Fakultas, Kategori (Dropdown), Judul, Isi (Textarea). Backend integration with MongoDB to post to /api/aspirasi."
+    }
+  },
+  "media_urls": {
+    "logo": {
+      "url": "https://customer-assets.emergentagent.com/job_b2fc0a22-8731-4a19-80e8-90b4a3abe1f1/artifacts/o9onvhnk___FILOSOFI_LOGO_PARLEMEN_PILAR_KARSA__Halo__Brawijayans____Parlemen_Pilar_Karsa_merupakan_sim-removebg-preview.png",
+      "description": "DPM UB Logo (Gold/Copper pillar curves)"
+    },
+    "hero_building": {
+      "url": "https://customer-assets.emergentagent.com/job_b2fc0a22-8731-4a19-80e8-90b4a3abe1f1/artifacts/q7n3rxgd_4595177066_9b844906f4_b-removebg-preview.png",
+      "description": "Gedung Rektorat UB. Must be blended with mask and glow."
+    },
+    "pilar_reference": {
+      "url": "https://customer-assets.emergentagent.com/job_b2fc0a22-8731-4a19-80e8-90b4a3abe1f1/artifacts/xa1v9szx_Screenshot%202026-05-06%20185050.png",
+      "description": "Reference for the 5 Pillars content."
+    }
+  },
+  "instructions_to_main_agent": [
+    "ALL React components MUST be written in .js or .jsx. DO NOT use .tsx files.",
+    "Install and use Framer Motion for scroll reveals, parallax, and the floating canvas elements.",
+    "Install and use 'lucide-react' for all icons.",
+    "Use '@fontsource/cormorant-garamond' and '@fontsource/outfit' for typography.",
+    "DO NOT use generic Shadcn cards for the main marketing sections; build custom glassmorphism HTML/Tailwind structures.",
+    "For the Aspirasi form, build a functional modal using Shadcn Dialog/Form/Input/Textarea/Select, but customize it to look premium and glassmorphic. Must post to /api/aspirasi.",
+    "Create a shared generic 'Under Development' / 404 page for About, Legislasi, and Aspirasi routes.",
+    "Ensure the background is a global component wrapping the app, providing the noise, blobs, and dark navy-to-black gradient.",
+    "For the Rektorat building image, apply classes like `mask-image: linear-gradient(to bottom, black 50%, transparent 100%)` and place a blurred gold div behind it for integration.",
+    "Include 'data-testid' on all interactive elements, buttons, links, inputs, and form submissions."
+  ],
+  "test_attributes": {
+    "nav_home": "data-testid='nav-home'",
+    "nav_about": "data-testid='nav-about'",
+    "nav_legislasi": "data-testid='nav-legislasi'",
+    "nav_aspirasi": "data-testid='nav-aspirasi'",
+    "cta_aspirasi_header": "data-testid='header-cta-aspirasi'",
+    "cta_aspirasi_hero": "data-testid='hero-cta-aspirasi'",
+    "aspirasi_form_nama": "data-testid='aspirasi-input-nama'",
+    "aspirasi_form_nim": "data-testid='aspirasi-input-nim'",
+    "aspirasi_form_fakultas": "data-testid='aspirasi-input-fakultas'",
+    "aspirasi_form_kategori": "data-testid='aspirasi-input-kategori'",
+    "aspirasi_form_judul": "data-testid='aspirasi-input-judul'",
+    "aspirasi_form_isi": "data-testid='aspirasi-input-isi'",
+    "aspirasi_form_submit": "data-testid='aspirasi-submit-button'"
+  }
+}

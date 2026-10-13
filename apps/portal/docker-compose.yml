@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: dpm_app_container
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www/html:z
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    container_name: dpm_mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: dpm_portal
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql-dpm-data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3309:3306"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: dpm_phpmyadmin_container
+    ports:
+      - "8087:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    depends_on:
+      - db
+
+volumes:
+  mysql-dpm-data:

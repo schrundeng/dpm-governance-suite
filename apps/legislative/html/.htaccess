@@ -1,0 +1,14 @@
+DirectoryIndex public/index.php
+
+RewriteEngine On
+
+# Langsung akses file/folder yang memang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Semua request diarahkan ke public/index.php
+RewriteRule ^(.*)$ public/index.php?route=$1 [QSA,L]
+
+# Increase upload limits to support files up to 20MB
+php_value upload_max_filesize 25M
+php_value post_max_size 25M
