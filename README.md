@@ -44,6 +44,17 @@ To support simultaneous local execution, services are mapped across distinct hos
 | Legislative | `apps/legislative` | `8081` | `3310` | `8082` |
 | Budget | `apps/budget` | `8085` | `3308` | `8086` |
 
+## Default Authentication Credentials
+
+Pre-seeded accounts provisioned on initial database initialization:
+
+| Subsystem | Role | Login URL | Identifier (Username / Email) | Password |
+| :--- | :--- | :--- | :--- | :--- |
+| Portal | Administrator | `http://localhost:8000/admin/login` | `admin` | `admin123` |
+| Legislative | Administrator | `http://localhost:8081/login` | `admin@dpm.org` | `admin` |
+| Budget | Administrator | `http://localhost:8085/login` | `admin@example.com` | `admin123` |
+| Budget | Delegasi (User) | `http://localhost:8085/login` | `user@example.com` | `admin123` |
+
 ## Quickstart
 
 Each application is containerized with Docker Compose. Refer to individual directory documentation for service-specific commands and seeding instructions:

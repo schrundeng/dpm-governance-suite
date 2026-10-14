@@ -59,4 +59,6 @@ legislative/
 
 3. Endpoints:
    - Public Portal: http://localhost:8081
+   - Administrative Login: http://localhost:8081/login
+   - Default Admin Credentials: `admin@dpm.org` / `admin`
    - phpMyAdmin: http://localhost:8082

@@ -60,6 +60,8 @@ portal/
 
 3. Endpoints:
    - Backend API & Admin: http://localhost:8000
+   - Administrative Login: http://localhost:8000/admin/login
+   - Default Admin Credentials: `admin` / `admin123`
    - phpMyAdmin: http://localhost:8087
 
 ### 2. Frontend (Vite)

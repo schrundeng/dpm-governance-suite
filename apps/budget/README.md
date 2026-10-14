@@ -55,4 +55,7 @@ budget/
 
 3. Endpoints:
    - Application: http://localhost:8085
+   - Login Portal: http://localhost:8085/login
+   - Default Admin Credentials: `admin@example.com` / `admin123`
+   - Default User Credentials: `user@example.com` / `admin123`
    - phpMyAdmin: http://localhost:8086
