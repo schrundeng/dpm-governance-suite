@@ -11,11 +11,69 @@
         body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; min-height: 100vh; color: #1f2937; }
         
         /* Navbar */
-        .navbar { background: #1e3a5f; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .navbar h1 { font-size: 1.1rem; color: #fbbf24; }
-        .navbar-right { display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; }
-        .navbar a { color: #fff; text-decoration: none; font-weight: 500; }
-        .navbar a:hover { text-decoration: underline; }
+        .navbar {
+            background: #1e3a5f;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .navbar h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+        }
+        .brand-short {
+            display: none;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-size: 0.875rem;
+        }
+        .user-greeting {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+        .user-greeting b {
+            color: #ffffff;
+        }
+        .nav-portal {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 0.35rem 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        .nav-portal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .portal-text-short {
+            display: none;
+        }
+        .btn-logout {
+            padding: 0.4rem 1rem;
+            background: #fee2e2;
+            color: #b91c1c !important;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            font-size: 0.85rem;
+            text-decoration: none !important;
+            transition: background 0.15s;
+        }
+        .btn-logout:hover {
+            background: #fca5a5;
+        }
 
         .container { max-width: 100%; margin: 2rem auto; padding: 0 2rem; }
         
@@ -67,23 +125,140 @@
         .pagination-btn.disabled { background: #f3f4f6; color: #9ca3af; cursor: not-allowed; border-color: #e5e7eb; }
 
         @media (max-width: 768px) {
-            .navbar { padding: 1rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-            .container { margin: 1rem auto; padding: 0 1rem; }
-            .filters { flex-direction: column; align-items: stretch; }
-            .filters select, .filters input, .filters button, .filters a { width: 100%; text-align: center; margin-left: 0 !important; }
-            .pagination-container { flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
-            .pagination-left { flex-direction: column; gap: 0.5rem; }
-            .pagination-buttons { justify-content: center; width: 100%; flex-wrap: wrap; }
+            .navbar {
+                padding: 0.75rem 1rem;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 0.5rem;
+                align-items: center;
+                text-align: left;
+            }
+            .navbar h1 {
+                font-size: 0.95rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .navbar-right {
+                gap: 0.6rem;
+                flex-shrink: 0;
+                align-items: center;
+            }
+            .user-greeting {
+                display: none; /* Sembunyikan "Halo, admin" di mobile sama seperti Baleg */
+            }
+            .portal-text-full {
+                display: none;
+            }
+            .portal-text-short {
+                display: inline;
+                font-size: 0.825rem;
+            }
+            .nav-portal {
+                padding: 0.3rem 0.65rem;
+            }
+            .btn-logout {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.775rem !important;
+            }
+            .container {
+                margin: 1rem auto;
+                padding: 0 0.75rem;
+            }
+            .top-bar {
+                margin-bottom: 1rem;
+            }
+            .top-bar h2 {
+                font-size: 1.15rem;
+            }
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .stat-card {
+                min-width: unset;
+                padding: 0.75rem;
+            }
+            .stat-card:first-child {
+                grid-column: span 2;
+            }
+            .stat-card .num {
+                font-size: 1.3rem;
+            }
+            .stat-card .label {
+                font-size: 0.75rem;
+            }
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+                padding: 0.75rem;
+            }
+            .filters select, .filters input, .filters button, .filters a {
+                width: 100%;
+                text-align: center;
+                margin-left: 0 !important;
+            }
+            .pagination-container {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                text-align: center;
+            }
+            .pagination-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .pagination-buttons {
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .navbar {
+                padding: 0.65rem 0.75rem;
+            }
+            .navbar h1 {
+                font-size: 0.875rem;
+            }
+            .brand-full {
+                display: none;
+            }
+            .brand-short {
+                display: inline;
+            }
+            .navbar-right {
+                gap: 0.45rem;
+            }
+            .nav-portal {
+                padding: 0.25rem 0.5rem;
+            }
+            .portal-text-short {
+                font-size: 0.8rem;
+            }
+            .btn-logout {
+                padding: 0.25rem 0.55rem;
+                font-size: 0.75rem !important;
+            }
         }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
-    <h1>DPM UB 2026 — Admin Portal</h1>
+    <h1>
+        <span class="brand-full">DPM UB 2026 — Admin Portal</span>
+        <span class="brand-short">DPM Admin</span>
+    </h1>
     <div class="navbar-right">
-        <span style="color: #fff; font-weight: 500; margin-right: 0.5rem;">Halo, <?= htmlspecialchars($_SESSION['admin_user']) ?></span>
-        <a href="#" onclick="handleLogout(event)">Logout</a>
+        <span class="user-greeting">Halo, <b><?= htmlspecialchars($_SESSION['admin_user']) ?></b></span>
+        <a href="http://localhost:3000" target="_blank" class="nav-portal">
+            <span class="portal-text-full">Lihat Portal</span>
+            <span class="portal-text-short">Portal</span>
+        </a>
+        <a href="/admin/logout" class="btn-logout" onclick="return confirm('Apakah Anda yakin ingin logout?')">Logout</a>
     </div>
 </nav>
 
